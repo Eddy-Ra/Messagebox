@@ -203,6 +203,7 @@ const Home = () => {
               placeholder="Tapez un message"
               style={styles.inputT}
               multiline
+              //eddy test
             />
             <TouchableOpacity style={styles.buttonE} onPress={sendMessage}>
               <Text style={styles.buttonText1}>Envoyer</Text>
