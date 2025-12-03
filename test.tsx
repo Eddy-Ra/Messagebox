@@ -204,7 +204,7 @@ const Home = () => {
               style={styles.inputT}
               multiline
               //eddy test
-              //okay
+              
             />
             <TouchableOpacity style={styles.buttonE} onPress={sendMessage}>
               <Text style={styles.buttonText1}>Envoyer</Text>
