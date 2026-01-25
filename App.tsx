@@ -10,6 +10,8 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { auth ,update  } from './firebase.js';
 import NetInfo from "@react-native-community/netinfo";
 import { Alert } from 'react-native';
+import recuperation from './recuperation.js';
+import code_envoyer from './code_envoyer.js';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -50,6 +52,8 @@ const App = () => {
         <Stack.Screen name="enregistrer" component={enregistrer} />
         <Stack.Screen name="home" component={home} />
         <Stack.Screen name="choix" component={choix} />
+        <Stack.Screen name="recuperation" component={recuperation} />
+        <Stack.Screen name="code_envoyer" component={code_envoyer} />
       </Stack.Navigator>
     </NavigationContainer>
   );

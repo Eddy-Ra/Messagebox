@@ -44,6 +44,9 @@ const Login = ({ navigation }) => {
 const enregistrer=()=>{
   navigation.navigate('enregistrer')
 }
+const recuperation=()=>{
+  navigation.navigate('recuperation')
+}
 
   return (
     <View style={styles.container}>
@@ -67,6 +70,9 @@ const enregistrer=()=>{
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={enregistrer}>
         <Text style={styles.buttonText}>Enregistrer</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={recuperation}>
+        <Text style={styles.buttonText}>Recuperation</Text>
       </TouchableOpacity>
     </View>
   );

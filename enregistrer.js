@@ -5,6 +5,7 @@ import { db, ref, set, onValue } from './firebase';
 const Enregistrer = ({ navigation }) => {
   const [name, setname] = useState('');
   const [psd, setpsd] = useState('');
+  const [mail, setmail] = useState('');
 
   const verification = () => {
     if (!name.trim()) {
@@ -16,7 +17,7 @@ const Enregistrer = ({ navigation }) => {
       Alert.alert('Erreur', 'Le mot de passe ne peut pas être vide');
       return;
     }
-
+    //verfifvation
     const ver = ref(db, 'utilisateurs');
     onValue(ver, (snapshot) => {
       const data = snapshot.val();
@@ -37,23 +38,34 @@ const Enregistrer = ({ navigation }) => {
     set(messageRef, {
       username: name,
       psd: psd,
+      mail:mail
       
+    }).then(()=>{
+      navigation.navigate('code_envoyer')
     })
-      .then(() => {
+      /*.then(() => {
         Alert.alert('Succès', 'Inscription réussie');
         setname("");
         setpsd("")
+        setmail("")
 
         navigation.navigate('login');
       })
       .catch((error) => {
         console.error("Erreur lors de l'enregistrement de l'utilisateur:", error);
         Alert.alert('Erreur', 'Échec de l\'inscription');
-      });
+      });*/
   };
 
   return (
     <View style={styles.container}>
+      <TextInput
+        value={mail}
+        onChangeText={(text) => setmail(text)}
+        placeholder="E-mail"
+        placeholderTextColor="white"
+        style={styles.input}
+      />
       <TextInput
         value={name}
         onChangeText={(text) => setname(text)}
